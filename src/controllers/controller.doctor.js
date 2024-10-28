@@ -31,4 +31,11 @@ async function Delete(req, res) {
 
 }
 
-export default {List, Insert, Update, Delete};
+async function ListServices(req, res) {
+
+    const idDoctor = req.params.id_doctor;
+    const services = await serviceDoctor.ListServices(idDoctor);
+    res.status(200).send(services);
+}
+
+export default {List, Insert, Update, Delete, ListServices};

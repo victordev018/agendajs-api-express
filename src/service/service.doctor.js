@@ -18,4 +18,8 @@ async function Delete(id_doctor) {
     return await repositoryDoctor.Delete(id_doctor);
 }
 
-export default {List, Insert, Update, Delete};
+async function ListServices(idDoctor) {
+    return await repositoryDoctor.ListServices(idDoctor);
+}
+
+export default {List, Insert, Update, Delete, ListServices};
