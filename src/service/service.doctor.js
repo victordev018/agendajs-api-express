@@ -1,7 +1,21 @@
 import repositoryDoctor from "../repositories/repository.doctor.js";
 
-async function List() {
-    return await repositoryDoctor.List();
+async function List(name) {
+    return await repositoryDoctor.List(name);
 }
 
-export default {List};
+async function Insert(name, specialty, icon){
+    
+    return await repositoryDoctor.Insert(name, specialty, icon);
+}
+
+async function Update(name, specialty, icon, id_doctor){
+    
+    return await repositoryDoctor.Update(name, specialty, icon, id_doctor);
+}
+
+async function Delete(id_doctor) {
+    return await repositoryDoctor.Delete(id_doctor);
+}
+
+export default {List, Insert, Update, Delete};

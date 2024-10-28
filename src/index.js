@@ -4,6 +4,7 @@ import router from "./routes.js";
 
 const app = express();
 
+app.use(express.json());    // request body in json format
 app.use(cors());
 app.use(router);
 
