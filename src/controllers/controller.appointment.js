@@ -14,4 +14,12 @@ async function Insert(req, res) {
     
 }
 
-export default {ListByUser, Insert};
+async function Delete(req, res) {
+    const id_user = req.id_user;
+    const id_appointment = req.params.id_appointment;
+    const appointment = await serviceAppointment.Delete(id_user, id_appointment);
+    res.status(200).send(appointment);  
+    
+}
+
+export default {ListByUser, Insert, Delete};

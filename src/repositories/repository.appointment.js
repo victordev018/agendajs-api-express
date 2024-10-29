@@ -23,4 +23,11 @@ async function Insert(id_doctor, id_service, id_user, booking_date, booking_hour
     return appointment[0];
 }
 
-export default {List, Insert};  
+async function Delete(id_user, id_appointment){
+    const sql = `delete from appointments where id_appointment = ? and id_user = ?`
+    await query(sql, [id_appointment, id_user]);
+
+    return {id_appointment};
+}
+
+export default {List, Insert, Delete};  
