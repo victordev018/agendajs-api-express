@@ -17,10 +17,11 @@ async function Login(email, password){
     if (user.length == 0)
         return [];
 
-    if (await bcrypt.compare(password, user.password))
+    if (await bcrypt.compare(password, user.password)){
         delete user.password;
         user.token = jwt.CreateToken(user.id_user);
         return user;
+    }
 
     return [];
 }
