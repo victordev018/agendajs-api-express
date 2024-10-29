@@ -25,4 +25,9 @@ async function Login(email, password){
     return [];
 }
 
-export default {Insert, Login};
+async function Profile(id_user){
+    const user = await repositoryUser.FindByIdUser(id_user);
+    return user;
+}
+
+export default {Insert, Login, Profile};

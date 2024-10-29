@@ -16,6 +16,7 @@ router.get("/doctors/:id_doctor/services", jwt.ValidateToken, controllerDoctor.L
 // users
 router.post("/users/register", controllerUser.Insert);
 router.post("/users/login", controllerUser.Login);
+router.get("/users/profile", jwt.ValidateToken, controllerUser.Profile);
 
 // appointments (reservas)
 router.get("/appointments", jwt.ValidateToken, controllerAppointment.ListByUser);

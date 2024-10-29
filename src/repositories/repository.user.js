@@ -18,4 +18,11 @@ async function FindByEmail(email){
     return user[0];
 }
 
-export default {Insert, FindByEmail};
+async function FindByIdUser(id_user) {
+    const sql = `select u.name, u.email from users u where id_user = ?`;
+
+    const user = await query(sql, id_user);
+    return user[0];
+}
+
+export default {Insert, FindByEmail, FindByIdUser};
